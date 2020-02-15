@@ -36,7 +36,7 @@ class TestCorrectRun(unittest.TestCase):
 
         self.universe = list()
 
-        for x in range(40):
+        for x in range(30):
             i = random.randrange(-1000, 50000)
             self.universe.append((str(x), i))
 
@@ -48,7 +48,7 @@ class TestCorrectRun(unittest.TestCase):
                           ('E', -1000)]
 
     def test_something(self):
-        results = bruteforce(self.universe, 4242, 5)
+        results = bruteforce(self.universe, 4242, 6)
 
         expected = ((('A', 5000),
                     ('B', 242),

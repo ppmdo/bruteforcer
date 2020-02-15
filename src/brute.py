@@ -2,7 +2,7 @@ from itertools import combinations, islice
 from scipy.special import comb as ncr
 import builtins
 import numpy as np
-import numba
+from numba import jit
 
 try:
     builtins.profile
@@ -19,6 +19,7 @@ def bruteforce(data: list, target: int, max_elems: int) -> list:
     # Filter down data to remove zeros
     data_len = len(data)
     data = list(filter(lambda x: x[1] != 0, data))
+    target = abs(target)
 
     combs_groups: list = []
     max_combs: int = 0
@@ -35,7 +36,7 @@ def bruteforce(data: list, target: int, max_elems: int) -> list:
                 break
 
             for i, combination in enumerate(batch):
-                batch_results[i] = abs(sum(x[1] for x in combination) - abs(target))
+                batch_results[i] = abs(sum(x[1] for x in combination) - target)
 
             indexes = np.where(batch_results <= 10)[0]
             for x in indexes:
