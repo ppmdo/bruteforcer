@@ -13,7 +13,7 @@ except AttributeError:
 
 
 @profile
-def bruteforce(data: list, target: int, max_elems: int) -> list:
+def bruteforce(data: list, target: float, max_elems: int) -> list:
     winners = []
 
     # Filter down data to remove zeros
@@ -23,9 +23,12 @@ def bruteforce(data: list, target: int, max_elems: int) -> list:
 
     combs_groups: list = []
     max_combs: int = 0
+
     for x in range(1, max_elems+1):
         combs_groups.append(combinations(data, x))
         max_combs += ncr(data_len, x)
+
+    print(f"Will calculate {max_combs} combinations.")
 
     for group in combs_groups:
         while True:
