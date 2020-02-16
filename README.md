@@ -33,7 +33,7 @@ results = bruteforce(universe, 7.0, 5)
 ``` 
 
 Performance
-===========
+----------
 On a Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz with 4 cores, the module is able to calculate 
 32,837,266 in 35.9s (914k op/s).
 

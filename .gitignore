@@ -132,3 +132,9 @@ dmypy.json
 
 # pytype static type analyzer
 .pytype/
+
+# pycharm files
+.idea
+
+# profiling results
+*.lprof
