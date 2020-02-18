@@ -9,7 +9,7 @@ class TestCorrectRun(unittest.TestCase):
     def setUp(self) -> None:
         self.universe = list()
 
-        for x in range(50):
+        for x in range(30):
             i = random.randrange(-1000, 50000)
             self.universe.append((str(x), i))
 
@@ -33,4 +33,4 @@ class TestCorrectRun(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main(module='tests', verbosity=2)
+    unittest.main(module='test', verbosity=2)
