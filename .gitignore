@@ -138,3 +138,8 @@ dmypy.json
 
 # profiling results
 *.lprof
+
+example.py
+
+# C source files
+*.c

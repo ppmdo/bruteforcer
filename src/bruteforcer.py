@@ -2,7 +2,7 @@ from itertools import combinations, islice
 from scipy.special import comb as ncr
 import builtins
 import numpy as np
-from numba import jit
+from cy_funcs import get_winners
 
 try:
     builtins.profile
@@ -38,11 +38,6 @@ def bruteforce(data: list, target: float, max_elems: int) -> list:
             if len(batch) == 0:
                 break
 
-            for i, combination in enumerate(batch):
-                batch_results[i] = abs(sum(x[1] for x in combination) - target)
-
-            indexes = np.where(batch_results <= 10)[0]
-            for x in indexes:
-                winners.append((batch[x], batch_results[x]))
+            winners += get_winners(batch, batch_results, target)
 
     return list(filter(lambda x: len(x) > 0, winners))
