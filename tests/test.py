@@ -21,7 +21,7 @@ class TestCorrectRun(unittest.TestCase):
                           ('E', -1000)]
 
     def test_correct(self):
-        results = bruteforce(self.universe, 4242, 6)
+        results = bruteforce(self.universe, 4242, 6, 10)
 
         expected = ((('A', 5000),
                     ('B', 242),

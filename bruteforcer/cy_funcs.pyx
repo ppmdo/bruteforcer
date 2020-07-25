@@ -3,14 +3,14 @@
 
 import numpy as np
 
-def get_winners(batch, batch_results, int target):
+def get_winners(batch, batch_results, int target, float threshold):
     winners = []
     cdef int i, x
 
     for i, combination in enumerate(batch):
         batch_results[i] = abs(sum(x[1] for x in combination) - target)
 
-    indexes = np.where(batch_results <= 10)[0]
+    indexes = np.where(batch_results <= threshold)[0]
     for x in indexes:
         winners.append((batch[x], batch_results[x]))
 
