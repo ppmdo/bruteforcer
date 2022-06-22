@@ -1,7 +1,7 @@
 Cython==0.29.15
 decorator==4.4.1
 llvmlite==0.31.0
-numpy==1.18.1
+numpy==1.22.0
 parso==0.6.1
 pexpect==4.8.0
 pickleshare==0.7.5
